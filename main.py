@@ -2,16 +2,14 @@ import scapy.all as scapy
 
 import time
 
-import subprocess
 
 
 
 
-
-NETWORK = "192.168.1.0/24"
+NETWORK = "192.168.1.254/24"
 
 IP_NETWORK ='192.168.1.1'
-IP_DEVICE ='192.168.1.2'
+IP_DEVICE ='192.168.1.254'
 
 
 INTERVAL = 3  # seconds
@@ -43,8 +41,8 @@ def scan(ip):
 
     for host in answered_list:
 
-        if host[1].psrc != "192.168.1.1":
-            macs.add(host[1].src)
+        if host[1].psrc != "192.168.1.254":
+           macs.add(host[1].src)
 
 
 
